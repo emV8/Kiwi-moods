@@ -1,4 +1,9 @@
+<?php
+if (session_status() == PHP_SESSION_NONE || session_id()== ""){
+		session_start();
+	}
 
+	?>
 			<form action="form/resform10.php" method="post" onsubmit="return false">
 			<b> 11. A quelle(s) humeur(s) associeriez-vous cette playlist ?
 				<a href="#" class="test">[?]
@@ -25,20 +30,48 @@
 					</a>
 			 </b><br/>
 			<br/>
-		       <input type='checkbox' name="namemoodplaylist[]" value="colère" /> Colère <br/>
-		       <input type="checkbox" name="namemoodplaylist[]" value="excitation" /> Excitation <br/>
-		       <input type="checkbox" name="namemoodplaylist[]" value="calme" /> Calme/détente <br/>
-		       <input type="checkbox" name="namemoodplaylist[]" value="joie" /> Joie <br/>
-		       <input type="checkbox" name="namemoodplaylist[]" value="peur" /> Peur <br/>
-		       <input type="checkbox" name="namemoodplaylist[]" value="fatigue" /> Fatigue <br/>
-		       <input type="checkbox" name="namemoodplaylist[]" value="ennui" /> Ennui <br/>
-		       <input type="checkbox" name="namemoodplaylist[]" value="tristesse" /> Tristesse <br/>
-		       <!--<input type="checkbox" name="namemoodplaylist[]" value="autre" /> Autre : 
-		       <input type = "text" name = "othermoodplaylist" id = "autre" placeholder = "Si autre, écrire une/des humeur(s)" style="text-align:center"/> <br/>
-			<input class = "suivant" type="submit" value="Suivant >" />-->
-		       <input type="checkbox" name="namemoodplaylist[]" id = "namemoodplaylist[]" value="autre" /> Autre : <input type = "text" name = "othermoodplaylist" id = "autre" placeholder = "Si autre, écrire une/des humeur(s)" style="text-align:center" onfocus="document.getElementById('namemoodplaylist[]').checked=true;"/> <br/>
+			<table class="mediumquestion">
+				<tr>
+					<td> Colère </td>
+		       <td><input type='checkbox' name="namemoodplaylist[]" value="colère" /></td>
+		   </tr>
+		   <tr>
+		   	<td> Excitation </td>
+		     <td>  <input type="checkbox" name="namemoodplaylist[]" value="excitation" /></td>
+		   </tr>
+		   <tr>
+		   	<td> Calme/détente </td>
+		      <td> <input type="checkbox" name="namemoodplaylist[]" value="calme" /> </td>
+		   </tr>
+		   <tr>
+		   	<td> Joie </td>
+		     <td>  <input type="checkbox" name="namemoodplaylist[]" value="joie" /> </td>
+		   </tr>
+		   <tr>
+		   	<td> Peur </td>
+		       <td><input type="checkbox" name="namemoodplaylist[]" value="peur" /></td>
+		       <tr/>
+		       <tr>
+		       	<td> Fatigue </td>
+		       <td><input type="checkbox" name="namemoodplaylist[]" value="fatigue" /></td>
+		   </tr>
+		   <tr>
+		   	<td> Ennui </td>
+		      <td> <input type="checkbox" name="namemoodplaylist[]" value="ennui" /> </td>
+		   </tr>
+		   <tr>
+		   	<td> Tristesse </td>
+		      <td> <input type="checkbox" name="namemoodplaylist[]" value="tristesse" /></td>
+		   </tr>
+		       <tr>
+		       	<td> Autre : </td>
+		       <td><input type="checkbox" name="namemoodplaylist[]" id = "namemoodplaylist[]" value="autre" />
+		       	<input type = "text" name = "othermoodplaylist" id = "autre" placeholder = "Si autre, écrire une/des humeur(s)" style="text-align:center" onfocus="document.getElementById('namemoodplaylist[]').checked=true;"/> <br/>
+			</td>
+			</tr>
+			</table>
 			<input id = "last" class = "suivant" type="submit" value="Suivant" onclick="loadFormLast(this)">
-			<br/>
+			<br/> <br/>
 			<progress max="10" value = "10"></progress>
 		<br/>
 			</form>

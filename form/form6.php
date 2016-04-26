@@ -1,4 +1,10 @@
+<?php
 
+if (session_status() == PHP_SESSION_NONE || session_id()== ""){
+		session_start();
+	}
+
+	?>
 			<form action="form/resform6.php" method="post" onsubmit="return false">
 			<b> 7. Avant d'écouter cette playlist, vous avez choisi '
 				<?php
@@ -18,10 +24,19 @@
 				?> ' pour qualifier votre humeur. <br/> 
 				Trouvez-vous qu'elle ait changée après cette écoute ? </b><br/>
 			<br/>
-		       <input type='radio' name="moodplaylist" value="oui" /> Oui <br/>
-		       <input type="radio" name="moodplaylist" value="non" /> Non <br/>
+			<table>
+				<tr>
+					<td>Oui</td>
+		       <td><input type='radio' name="moodplaylist" value="oui" /></td> 
+		   </tr>
+		   <tr>
+		   	<td>  Non</td>
+		       <td><input type="radio" name="moodplaylist" value="non" /></td> 
+		   </tr>
+		   </table>
+		   <br/>
 			<input class = "suivant" type="submit" value="Suivant" onclick="loadForm(this)">
-			<br/>
+			<br/> <br/>
 			<progress max="10" value = "6"></progress>
 			<br/>
 			</form>

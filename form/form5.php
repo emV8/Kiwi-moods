@@ -3,8 +3,10 @@
 	$bdd = mysql_select_db("kiwimoods", $connexion);
 	mysql_query("SET NAMES 'utf8'");
 
-	session_start();
-
+	if (session_status() == PHP_SESSION_NONE || session_id()== ""){
+		session_start();
+	}
+	
 	$title = array();
             $artist = array();
             $link = array();
@@ -32,7 +34,7 @@
 		   </tr>
 
 		   <tr>	   	
-		       <td> Oui </td>
+		       <td class="titlename"> Oui </td>
 		       <td> <input type='radio' name="connaissancetitre1" value="oui" /> </td>
 		       <td> <input type='radio' name="connaissancetitre2" value="oui" /> </td>
 		       <td> <input type='radio' name="connaissancetitre3" value="oui" /> </td>
@@ -43,7 +45,7 @@
 		   </tr>
 		   
 		   <tr>
-		       <td> Non</td>
+		       <td class="titlename"> Non</td>
 		       <td><input type="radio" name="connaissancetitre1" value="non" /></td>
 		       <td><input type="radio" name="connaissancetitre2" value="non" /></td>
 		       <td><input type="radio" name="connaissancetitre3" value="non" /></td>
@@ -68,7 +70,7 @@
 		   </tr>
 
 		   <tr>	   	
-		       <td> Oui </td>
+		       <td class="titlename"> Oui </td>
 		       <td> <input type='radio' name="connaissanceartiste1" value="oui" /> </td>
 		       <td> <input type='radio' name="connaissanceartiste2" value="oui" /> </td>
 		       <td> <input type='radio' name="connaissanceartiste3" value="oui" /> </td>
@@ -79,7 +81,7 @@
 		   </tr>
 		   
 		   <tr>
-		       <td> Non</td>
+		       <td class="titlename"> Non</td>
 		       <td><input type="radio" name="connaissanceartiste1" value="non" /></td>
 		       <td><input type="radio" name="connaissanceartiste2" value="non" /></td>
 		       <td><input type="radio" name="connaissanceartiste3" value="non" /></td>
@@ -90,7 +92,7 @@
 			</table>
 			<br/>
 			<input class = "suivant" type="submit" value="Suivant" onclick="loadForm(this)">
-			<br/>
+			<br/> <br/>
 			<progress max="10" value = "5"></progress>
 			<br/>
 			</form>

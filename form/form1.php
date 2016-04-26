@@ -4,6 +4,10 @@
   $bdd = mysql_select_db("kiwimoods", $connexion);
   mysql_query("SET NAMES 'utf8'"); 
 
+  if (session_status() == PHP_SESSION_NONE || session_id()== ""){
+		session_start();
+	}
+
   $title = array();
             $artist = array();
             $link = array();
@@ -55,7 +59,7 @@
 		   </tr>
 
 		   <tr>
-		       <td style="text-align:left">Colère</td>
+		       <td class="titlename" style="text-align:left">Colère</td>
 		       <td> <input type="checkbox" name="etitre1[]" value="colère" /> </td>
 		       <td> <input type="checkbox" name="etitre2[]" value="colère" /> </td>
 		       <td> <input type="checkbox" name="etitre3[]" value="colère" /> </td>
@@ -64,7 +68,7 @@
 		       <td> <input type="checkbox" name="etitre6[]" value="colère" /> </td>
 		   </tr>
 		   <tr>
-		       <td style="text-align:left">Excitation</td>
+		       <td class="titlename" style="text-align:left">Excitation</td>
 		       <td><input type="checkbox" name="etitre1[]" value="excitation" /></td>
 		       <td><input type="checkbox" name="etitre2[]" value="excitation" /></td>
 		       <td><input type="checkbox" name="etitre3[]" value="excitation" /></td>
@@ -73,7 +77,7 @@
 		       <td><input type="checkbox" name="etitre6[]" value="excitation" /></td>
 		   </tr>
 		   <tr>
-		       <td style="text-align:left">Calme/détente</td>
+		       <td class="titlename" style="text-align:left">Calme/détente</td>
 		       <td><input type="checkbox" name="etitre1[]" value="calme" /></td>
 		       <td><input type="checkbox" name="etitre2[]" value="calme" /></td>
 		       <td><input type="checkbox" name="etitre3[]" value="calme" /></td>
@@ -82,7 +86,7 @@
 		       <td><input type="checkbox" name="etitre6[]" value="calme" /></td>
 		   </tr>
 		   <tr>
-		       <td style="text-align:left">Joie</td>
+		       <td class="titlename" style="text-align:left">Joie</td>
 		       <td><input type="checkbox" name="etitre1[]" value="joie" /></td>
 		       <td><input type="checkbox" name="etitre2[]" value="joie" /></td>
 		       <td><input type="checkbox" name="etitre3[]" value="joie" /></td>
@@ -91,7 +95,7 @@
 		       <td><input type="checkbox" name="etitre6[]" value="joie" /></td>
 		   </tr>
 		   <tr>
-		       <td style="text-align:left">Fatigue</td>
+		       <td class="titlename" style="text-align:left">Fatigue</td>
 		       <td><input type="checkbox" name="etitre1[]" value="fatigue" /></td>
 		       <td><input type="checkbox" name="etitre2[]" value="fatigue" /></td>
 		       <td><input type="checkbox" name="etitre3[]" value="fatigue" /></td>
@@ -100,7 +104,7 @@
 		       <td><input type="checkbox" name="etitre6[]" value="fatigue" /></td>
 		   </tr>
 		   <tr>
-		       <td style="text-align:left">Ennui</td>
+		       <td class="titlename" style="text-align:left">Ennui</td>
 		       <td><input type="checkbox" name="etitre1[]" value="ennui" /></td>
 		       <td><input type="checkbox" name="etitre2[]" value="ennui" /></td>
 		       <td><input type="checkbox" name="etitre3[]" value="ennui" /></td>
@@ -109,7 +113,7 @@
 		       <td><input type="checkbox" name="etitre6[]" value="ennui" /></td>
 		   </tr>
 		   <tr>
-		       <td style="text-align:left">Tristesse</td>
+		       <td class="titlename" style="text-align:left">Tristesse</td>
 		       <td><input type="checkbox" name="etitre1[]" value="tristesse" /></td>
 		       <td><input type="checkbox" name="etitre2[]" value="tristesse" /></td>
 		       <td><input type="checkbox" name="etitre3[]" value="tristesse" /></td>
@@ -118,7 +122,7 @@
 		       <td><input type="checkbox" name="etitre6[]" value="tristesse" /></td>
 		   </tr>
 		   <tr>
-		       <td style="text-align:left">Indifférence</td>
+		       <td class="titlename" style="text-align:left">Indifférence</td>
 		       <td><input type="checkbox" name="etitre1[]" value="indifference" /></td>
 		       <td><input type="checkbox" name="etitre2[]" value="indifference" /></td>
 		       <td><input type="checkbox" name="etitre3[]" value="indifference" /></td>
@@ -127,7 +131,7 @@
 		       <td><input type="checkbox" name="etitre6[]" value="indifference" /></td>
 		   </tr>
 		    <tr>
-		       <td style="text-align:left">Autre</td>
+		       <td class="titlename" style="text-align:left;">Autre</td>
 		       <td><br/><input type="checkbox" name="etitre1[]" id = "etitre1" value="autre" />
 		       <input type = "text" name = "autre1" id = "autre1" placeholder = "Si autre, écrire une/des émotion(s)" style="text-align:center" onfocus="document.getElementById('etitre1').checked=true;"/>
 		   </td>

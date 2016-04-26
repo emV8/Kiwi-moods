@@ -3,7 +3,9 @@
 	$bdd = mysql_select_db("kiwimoods", $connexion);
 	mysql_query("SET NAMES 'utf8'");
 
-	session_start();
+	if (session_status() == PHP_SESSION_NONE || session_id()== ""){
+		session_start();
+	}
 
 	$title = array();
             $artist = array();
@@ -50,7 +52,7 @@
 		   </tr>
 
 		   <tr>
-		       <td style="text-align:left">Je ne le réécouterais pas</td>
+		       <td class="titlename" style="text-align:left">Je ne le réécouterais pas</td>
 		       <td> <input type="checkbox" name="cptitre1[]" value="jamais" /> </td>
 		       <td> <input type="checkbox" name="cptitre2[]" value="jamais" /> </td>
 		       <td> <input type="checkbox" name="cptitre3[]" value="jamais" /> </td>
@@ -59,7 +61,7 @@
 		       <td> <input type="checkbox" name="cptitre6[]" value="jamais" /> </td>
 		   </tr>
 		   <tr>
-		       <td style="text-align:left">Dans les transports en commun</td>
+		       <td class="titlename" style="text-align:left">Dans les transports en commun</td>
 		       <td> <input type="checkbox" name="cptitre1[]" value="transport" /> </td>
 		       <td> <input type="checkbox" name="cptitre2[]" value="transport" /> </td>
 		       <td> <input type="checkbox" name="cptitre3[]" value="transport" /> </td>
@@ -68,7 +70,7 @@
 		       <td> <input type="checkbox" name="cptitre6[]" value="transport" /> </td>
 		   </tr>
 		   <tr>
-		       <td style="text-align:left">En conduisant</td>
+		       <td class="titlename" style="text-align:left">En conduisant</td>
 		       <td><input type="checkbox" name="cptitre1[]" value="conduite" /></td>
 		       <td><input type="checkbox" name="cptitre2[]" value="conduite" /></td>
 		       <td><input type="checkbox" name="cptitre3[]" value="conduite" /></td>
@@ -77,7 +79,7 @@
 		       <td><input type="checkbox" name="cptitre6[]" value="conduite" /></td>
 		   </tr>
 		   <tr>
-		       <td style="text-align:left">En travaillant</td>
+		       <td class="titlename" style="text-align:left">En travaillant</td>
 		       <td><input type="checkbox" name="cptitre1[]" value="travail" /></td>
 		       <td><input type="checkbox" name="cptitre2[]" value="travail" /></td>
 		       <td><input type="checkbox" name="cptitre3[]" value="travail" /></td>
@@ -86,7 +88,7 @@
 		       <td><input type="checkbox" name="cptitre6[]" value="travail" /></td>
 		   </tr>
 		   <tr>
-		       <td style="text-align:left">En révisant</td>
+		       <td class="titlename" style="text-align:left">En révisant</td>
 		       <td><input type="checkbox" name="cptitre1[]" value="révision" /></td>
 		       <td><input type="checkbox" name="cptitre2[]" value="révision" /></td>
 		       <td><input type="checkbox" name="cptitre3[]" value="révision" /></td>
@@ -95,7 +97,7 @@
 		       <td><input type="checkbox" name="cptitre6[]" value="révision" /></td>
 		   </tr>
 		   <tr>
-		       <td style="text-align:left">En lisant</td>
+		       <td class="titlename" style="text-align:left">En lisant</td>
 		       <td><input type="checkbox" name="cptitre1[]" value="lecture" /></td>
 		       <td><input type="checkbox" name="cptitre2[]" value="lecture" /></td>
 		       <td><input type="checkbox" name="cptitre3[]" value="lecture" /></td>
@@ -104,7 +106,7 @@
 		       <td><input type="checkbox" name="cptitre6[]" value="lecture" /></td>
 		   </tr>
 		   <tr>
-		       <td style="text-align:left">En surfant sur le web</td>
+		       <td class="titlename" style="text-align:left">En surfant sur le web</td>
 		       <td><input type="checkbox" name="cptitre1[]" value="web" /></td>
 		       <td><input type="checkbox" name="cptitre2[]" value="web" /></td>
 		       <td><input type="checkbox" name="cptitre3[]" value="web" /></td>
@@ -113,7 +115,7 @@
 		       <td><input type="checkbox" name="cptitre6[]" value="web" /></td>
 		   </tr>
 		   <tr>
-		       <td style="text-align:left">En jouant</td>
+		       <td class="titlename" style="text-align:left">En jouant</td>
 		       <td><input type="checkbox" name="cptitre1[]" value="jeu" /></td>
 		       <td><input type="checkbox" name="cptitre2[]" value="jeu" /></td>
 		       <td><input type="checkbox" name="cptitre3[]" value="jeu" /></td>
@@ -122,7 +124,7 @@
 		       <td><input type="checkbox" name="cptitre6[]" value="jeu" /></td>
 		   </tr>
 		   <tr>
-		       <td style="text-align:left">En faisant du sport</td>
+		       <td class="titlename" style="text-align:left">En faisant du sport</td>
 		       <td><input type="checkbox" name="cptitre1[]" value="sport" /></td>
 		       <td><input type="checkbox" name="cptitre2[]" value="sport" /></td>
 		       <td><input type="checkbox" name="cptitre3[]" value="sport" /></td>
@@ -131,7 +133,7 @@
 		       <td><input type="checkbox" name="cptitre6[]" value="sport" /></td>
 		   </tr>
 		   <tr>
-		       <td style="text-align:left">Seul</td>
+		       <td class="titlename" style="text-align:left">Seul</td>
 		       <td><input type="checkbox" name="cptitre1[]" value="seul" /></td>
 		       <td><input type="checkbox" name="cptitre2[]" value="seul" /></td>
 		       <td><input type="checkbox" name="cptitre3[]" value="seul" /></td>
@@ -140,7 +142,7 @@
 		       <td><input type="checkbox" name="cptitre6[]" value="seul" /></td>
 		   </tr>
 		   <tr>
-		       <td style="text-align:left">Avec vos amis</td>
+		       <td class="titlename" style="text-align:left">Avec vos amis</td>
 		       <td><input type="checkbox" name="cptitre1[]" value="amis" /></td>
 		       <td><input type="checkbox" name="cptitre2[]" value="amis" /></td>
 		       <td><input type="checkbox" name="cptitre3[]" value="amis" /></td>
@@ -149,7 +151,7 @@
 		       <td><input type="checkbox" name="cptitre6[]" value="amis" /></td>
 		   </tr>
 		   <tr>
-		       <td style="text-align:left">Avec votre compagnon/compagne</td>
+		       <td class="titlename" style="text-align:left">Avec votre compagnon/compagne</td>
 		       <td><input type="checkbox" name="cptitre1[]" value="compagnon" /></td>
 		       <td><input type="checkbox" name="cptitre2[]" value="compagnon" /></td>
 		       <td><input type="checkbox" name="cptitre3[]" value="compagnon" /></td>
@@ -158,7 +160,7 @@
 		       <td><input type="checkbox" name="cptitre6[]" value="sport" /></td>
 		   </tr>
 		   <tr>
-		       <td style="text-align:left">Avec votre famille</td>
+		       <td class="titlename" style="text-align:left">Avec votre famille</td>
 		       <td><input type="checkbox" name="cptitre1[]" value="famille" /></td>
 		       <td><input type="checkbox" name="cptitre2[]" value="famille" /></td>
 		       <td><input type="checkbox" name="cptitre3[]" value="famille" /></td>
@@ -167,7 +169,7 @@
 		       <td><input type="checkbox" name="cptitre6[]" value="famille" /></td>
 		   </tr>
 		   <tr>
-		       <td style="text-align:left">Autre</td>
+		       <td class="titlename" style="text-align:left">Autre</td>
 		       <td><br/><input type="checkbox" name="cptitre1[]" id ="cptitre1" value="autrec" />
 		       <input type = "text" name = "autrec1" id = "autrec1" placeholder = "Si autre, écrire un/des contexte(s)" style="text-align:center" onfocus="document.getElementById('cptitre1').checked=true;"/>
 		   </td>
@@ -185,7 +187,7 @@
 			</table>
 			<br/>
 			<input class = "suivant" type="submit" value="Suivant" onclick="loadForm(this)">
-			<br/>
+			<br/> <br/>
 			<progress max="10" value = "4"></progress>
 			<br/>
 			</form>

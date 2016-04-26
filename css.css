@@ -28,24 +28,57 @@ label{
 
 progress{
 	position: relative;
-	top: 20px;
-	left: 80%;
+	top: 8%;
+	left: 85%;
 	margin-bottom: 2%;
 }
 
 input[type=checkbox]{
-	transform: scale(1.25);
-	-webkit-transform: scale(1.25);
+	transform: scale(1.5);
+	-webkit-transform: scale(1.5);
 	border-radius: 3px;
+	margin-bottom: 6%;
+	margin-top: 6%;
+	margin-left: 45%;
 }
 
 input[type=radio]{
-	transform: scale(1.25);
-	-webkit-transform: scale(1.25);
+	transform: scale(1.5);
+	-webkit-transform: scale(1.5);
+	margin-bottom: 6%;
+	margin-left: 45%;
+	margin-top: 6%;
 }
 
+input[type=text]{
+	width: 100%;
+}
 
+/*
+input {
+  /*padding: 10px;
+  /*border: 0px;
+  /*background: rgba(255, 255, 255, .2);
+  /*display: block;
+  margin: 10px;
+  /*width: 300px;
+  /*color: white;
+  /*font-size: 14px;
+  /*height: 25px;
+}*/
 
+input {
+  border: 0px;
+  background: rgba(255, 255, 255, .2);
+  display: block;
+  color: white;
+  font-size: 14px;
+  padding: 2%;
+}
+
+table{
+	font-size: 16px;
+}
 
 
 #connection{
@@ -54,27 +87,28 @@ input[type=radio]{
 }
 
 #logConn{
+	text-align: center;
 	position: absolute;
-	right: 30%;
-	top: 1%;
+	right: 33%;
+	top: 2%;
 }
 
 #loginInput{
 	position: relative;
-	right: 30%;
-	margin-top: 1px;
+	right: 7%;
+	margin-top: 2%;
 }
 
 #mdpConn{
 	position: absolute;
 	right: 10%;
-	top: 1%;
+	top: 2%;
 }
 
 #mdpInput{
 	position: relative;
-	right: 10%;
-	margin-top: 1px;
+	right: 18%;
+	margin-top: 2%;
 }
 
 #connection_button{
@@ -233,19 +267,20 @@ fieldset
 }
 
 td{
-	width: 5%;
-	text-align: center;
+	width: 10%;
 }
 
-tr{
-	height: 5%;
+
+.titlename{
+	width: 2%;
 }
 
 .question{
 	position: absolute;
-	top: 30%;
-	left: 3%;
+	top: 25%;
+	left: 2%;
 	margin-top: 8%;
+	margin-right: 1%;
 }
 
 .smallquestion{
@@ -266,6 +301,7 @@ tr{
     background-color:#e74c3c;
     font-size: 18px;
     margin-bottom: 2px;
+    width: 100px;
 }
 
 .suivanttuto{
@@ -311,6 +347,12 @@ table{
 	font-size: 28px;
 }
 
+#sugg_button{
+	position: absolute;
+	left: 43%;
+	margin-top: 5%;
+}
+
 
 #player_button{
 	position: absolute;
@@ -323,6 +365,13 @@ table{
 	margin-bottom: 18%;
 }
 
+.littlequestion{
+	width: 30%;
+}
+
+.mediumquestion{
+	width: 40%;
+}
 
 
 
@@ -345,20 +394,6 @@ h2 {
   color: rgba(255, 255, 255, .8);
   margin-left: 12px;
 }
-
-
-input {
-  padding: 10px;
-  border: 0px;
-  background: rgba(255, 255, 255, .2);
-  display: block;
-  margin: 10px;
-  width: 300px;
-  color: white;
-  font-size: 14px;
-  height: 25px;
-}
-
 
 
 button {
