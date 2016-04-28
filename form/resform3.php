@@ -1,6 +1,16 @@
 <?php
-$connexion = mysqli_connect("localhost", "root", "", "kiwimoods");
-$connexion -> query("SET NAMES 'utf8'");
+
+include_once('../../config-tut8.php');
+	$connexion = mysqli_connect($databaselocation, $databaseuser, $databasepass, $databasename);
+	if (!$connexion) {
+       die('Could not connect: ' . mysqli_error());
+    }
+	$bdd = mysqli_select_db($connexion, $databasename);
+	if (!$bdd) {
+       die ('Impossible de sélectionner la base de données : ' . mysqli_error());
+    }
+	$connexion -> query("SET NAMES 'utf8'");
+
 session_start();
 $userid = $_SESSION['userid'];
 $ok1 = false;
@@ -14,7 +24,7 @@ if (!$connexion) {
 }
 
 
-$requete = "SELECT titre, artiste FROM music WHERE playlist_id = '".$_SESSION ['playlist_id']."'";
+$requete = "SELECT titre, artiste FROM ".$dbprefix."music WHERE playlist_id = '".$_SESSION ['playlist_id']."'";
 $res = $connexion -> query($requete);	
 
 while($row = mysqli_fetch_array($res)){
@@ -23,7 +33,7 @@ while($row = mysqli_fetch_array($res)){
 
 if (isset($_POST['gouttitre1']) && $_POST['gouttitre1']!=""){
 	global $dbprefix;
-	$requete = 'INSERT INTO  likemusic (likesong, user_id , title) VALUES("'.$_POST['gouttitre1'].'","' .$userid.'","'.$title_playlist[0].'")';
+	$requete = 'INSERT INTO  '.$dbprefix.'likemusic (likesong, user_id , title) VALUES("'.$_POST['gouttitre1'].'","' .$userid.'","'.$title_playlist[0].'")';
 	$res = $connexion -> query($requete);
 	$ok1 = true;
 }else{
@@ -31,7 +41,7 @@ if (isset($_POST['gouttitre1']) && $_POST['gouttitre1']!=""){
 }
 if (isset($_POST['gouttitre2']) && $_POST['gouttitre2']!=""){
 	global $dbprefix;
-	$requete = 'INSERT INTO  likemusic (likesong, user_id , title) VALUES("'.$_POST['gouttitre2'].'","' .$userid.'","'.$title_playlist[1].'")';
+	$requete = 'INSERT INTO  '.$dbprefix.'likemusic (likesong, user_id , title) VALUES("'.$_POST['gouttitre2'].'","' .$userid.'","'.$title_playlist[1].'")';
 	$res = $connexion -> query($requete);
 	$ok2 = true;
 }else{
@@ -39,7 +49,7 @@ if (isset($_POST['gouttitre2']) && $_POST['gouttitre2']!=""){
 }
 if (isset($_POST['gouttitre3']) && $_POST['gouttitre3']!=""){
 	global $dbprefix;
-	$requete = 'INSERT INTO  likemusic (likesong, user_id , title) VALUES("'.$_POST['gouttitre3'].'","' .$userid.'","'.$title_playlist[2].'")';
+	$requete = 'INSERT INTO  '.$dbprefix.'likemusic (likesong, user_id , title) VALUES("'.$_POST['gouttitre3'].'","' .$userid.'","'.$title_playlist[2].'")';
 	$res = $connexion -> query($requete);
 	$ok3 = true;
 }else{
@@ -47,7 +57,7 @@ if (isset($_POST['gouttitre3']) && $_POST['gouttitre3']!=""){
 }
 if (isset($_POST['gouttitre4']) && $_POST['gouttitre4']!=""){
 	global $dbprefix;
-	$requete = 'INSERT INTO  likemusic (likesong, user_id , title) VALUES("'.$_POST['gouttitre4'].'","' .$userid.'","'.$title_playlist[3].'")';
+	$requete = 'INSERT INTO  '.$dbprefix.'likemusic (likesong, user_id , title) VALUES("'.$_POST['gouttitre4'].'","' .$userid.'","'.$title_playlist[3].'")';
 	$res = $connexion -> query($requete);
 	$ok4 = true;
 }else{
@@ -55,7 +65,7 @@ if (isset($_POST['gouttitre4']) && $_POST['gouttitre4']!=""){
 }
 if (isset($_POST['gouttitre5']) && $_POST['gouttitre5']!=""){
 	global $dbprefix;
-	$requete = 'INSERT INTO  likemusic (likesong, user_id , title) VALUES("'.$_POST['gouttitre5'].'","' .$userid.'","'.$title_playlist[4].'")';
+	$requete = 'INSERT INTO  '.$dbprefix.'likemusic (likesong, user_id , title) VALUES("'.$_POST['gouttitre5'].'","' .$userid.'","'.$title_playlist[4].'")';
 	$res = $connexion -> query($requete);
 	$ok5 = true;
 }else{
@@ -63,7 +73,7 @@ if (isset($_POST['gouttitre5']) && $_POST['gouttitre5']!=""){
 }
 if (isset($_POST['gouttitre6']) && $_POST['gouttitre6']!=""){
 	global $dbprefix;
-	$requete = 'INSERT INTO  likemusic (likesong, user_id , title) VALUES("'.$_POST['gouttitre6'].'","' .$userid.'","'.$title_playlist[5].'")';
+	$requete = 'INSERT INTO  '.$dbprefix.'likemusic (likesong, user_id , title) VALUES("'.$_POST['gouttitre6'].'","' .$userid.'","'.$title_playlist[5].'")';
 	$res = $connexion -> query($requete);
 	$ok6 = true;
 }else{
