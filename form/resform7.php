@@ -1,6 +1,16 @@
 <?php
-$connexion = mysqli_connect("localhost", "root", "", "kiwimoods");
-$connexion -> query("SET NAMES 'utf8'");
+
+include_once('../../config-tut8.php');
+	$connexion = mysqli_connect($databaselocation, $databaseuser, $databasepass, $databasename);
+	if (!$connexion) {
+       die('Could not connect: ' . mysqli_error());
+    }
+	$bdd = mysqli_select_db($connexion, $databasename);
+	if (!$bdd) {
+       die ('Impossible de sélectionner la base de données : ' . mysqli_error());
+    }
+	$connexion -> query("SET NAMES 'utf8'");
+	
 session_start();
 $userid = $_SESSION['userid'];
 $ok1 = true;
@@ -22,11 +32,11 @@ if(!empty($_POST['newmoodplaylist'])){
 			$mood.= " : ";
 			$othermood = $_POST['othermoodplaylist'];
 			$mood.= $othermood;
-			$requete = 'INSERT INTO  newmoodplaylist (mood_name, user_id , playlist_id) VALUES("'.$mood.'","' .$userid.'", "'.$_SESSION['playlist_id'].'")';
+			$requete = 'INSERT INTO  '.$dbprefix.'newmoodplaylist (mood_name, user_id , playlist_id) VALUES("'.$mood.'","' .$userid.'", "'.$_SESSION['playlist_id'].'")';
 			$res = $connexion -> query($requete);
 		}
 	}else{
-		$requete = 'INSERT INTO  newmoodplaylist (mood_name, user_id , playlist_id) VALUES("'.$mood.'","' .$userid.'", "'.$_SESSION['playlist_id'].'")';
+		$requete = 'INSERT INTO  '.$dbprefix.'newmoodplaylist (mood_name, user_id , playlist_id) VALUES("'.$mood.'","' .$userid.'", "'.$_SESSION['playlist_id'].'")';
 		$res = $connexion -> query($requete);
 	}
 }else{

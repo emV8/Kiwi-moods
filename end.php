@@ -36,17 +36,21 @@
 
 <?php
 
-$connexion = mysqli_connect("localhost", "root", "", "kiwimoods");
-$connexion -> query("SET NAMES 'utf8'");
-$userid = $_SESSION['userid'];
-if (!$connexion) {
-	die('Could not connect: ' . mysqli_error());
-}
+include_once('../../config-tut8.php');
+	$connexion = mysqli_connect($databaselocation, $databaseuser, $databasepass, $databasename);
+	if (!$connexion) {
+       die('Could not connect: ' . mysqli_error());
+    }
+	$bdd = mysqli_select_db($connexion, $databasename);
+	if (!$bdd) {
+       die ('Impossible de sélectionner la base de données : ' . mysqli_error());
+    }
+	$connexion -> query("SET NAMES 'utf8'");
 
 
 if (isset($_POST['suggestion']) && $_POST['suggestion']!="" && $_POST['suggestion']!='Si vous avez des suggestions, merci de les renseigner ici.'){
 
-	$requete = 'INSERT INTO  suggestion (suggestion_message, user_id) VALUES("'.$_POST['suggestion'].'","' .$userid.'")';
+	$requete = 'INSERT INTO '.$dbprefix.'suggestion (suggestion_message, user_id) VALUES("'.$_POST['suggestion'].'","' .$userid.'")';
 	$res = $connexion -> query($requete);
 	if ($res){
 		echo "<script> document.getElementById('txt').style.display = 'block'; </script>";

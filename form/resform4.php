@@ -1,6 +1,16 @@
 <?php
 
-$connexion = mysqli_connect("localhost", "root", "", "kiwimoods");
+include_once('../../config-tut8.php');
+	$connexion = mysqli_connect($databaselocation, $databaseuser, $databasepass, $databasename);
+	if (!$connexion) {
+       die('Could not connect: ' . mysqli_error());
+    }
+	$bdd = mysqli_select_db($connexion, $databasename);
+	if (!$bdd) {
+       die ('Impossible de sélectionner la base de données : ' . mysqli_error());
+    }
+	$connexion -> query("SET NAMES 'utf8'");
+	
 $connexion -> query("SET NAMES 'utf8'");
 session_start();
 $userid = $_SESSION['userid'];
@@ -15,7 +25,7 @@ if (!$connexion) {
 }
 
 
-$requete = "SELECT titre, artiste FROM music WHERE playlist_id = '".$_SESSION ['playlist_id']."'";
+$requete = "SELECT titre, artiste FROM ".$dbprefix."music WHERE playlist_id = '".$_SESSION ['playlist_id']."'";
 $res = $connexion -> query($requete);	
 
 while($row = mysqli_fetch_array($res)){
@@ -35,12 +45,12 @@ if(!empty($_POST['cptitre1'])){
 				$context.= " : ";
 				$othercontext = $_POST['autrec1'];
 				$context.= $othercontext;
-				$requete = 'INSERT INTO  possiblecontext (context_name, user_id , title) VALUES("'.$context.'","' .$userid.'","'.$title_playlist[0].'")';
+				$requete = 'INSERT INTO  '.$dbprefix.'possiblecontext (context_name, user_id , title) VALUES("'.$context.'","' .$userid.'","'.$title_playlist[0].'")';
 				$res = $connexion -> query($requete);
 				$ok1 = true;
 			}
 		}else{
-			$requete = 'INSERT INTO  possiblecontext (context_name, user_id , title) VALUES("'.$context.'","' .$userid.'","'.$title_playlist[0].'")';
+			$requete = 'INSERT INTO  '.$dbprefix.'possiblecontext (context_name, user_id , title) VALUES("'.$context.'","' .$userid.'","'.$title_playlist[0].'")';
 			$res = $connexion -> query($requete);
 			$ok1 = true;
 		}
@@ -62,12 +72,12 @@ if(!empty($_POST['cptitre2'])){
 				$context.= " : ";
 				$othercontext = $_POST['autrec2'];
 				$context.= $othercontext;
-				$requete = 'INSERT INTO  possiblecontext (context_name, user_id , title) VALUES("'.$context.'","' .$userid.'","'.$title_playlist[1].'")';
+				$requete = 'INSERT INTO  '.$dbprefix.'possiblecontext (context_name, user_id , title) VALUES("'.$context.'","' .$userid.'","'.$title_playlist[1].'")';
 				$res = $connexion -> query($requete);
 				$ok2 = true;
 			}
 		}else{
-			$requete = 'INSERT INTO  possiblecontext (context_name, user_id , title) VALUES("'.$context.'","' .$userid.'","'.$title_playlist[1].'")';
+			$requete = 'INSERT INTO  '.$dbprefix.'possiblecontext (context_name, user_id , title) VALUES("'.$context.'","' .$userid.'","'.$title_playlist[1].'")';
 			$res = $connexion -> query($requete);
 			$ok2 = true;
 		}
@@ -89,12 +99,12 @@ if(!empty($_POST['cptitre3'])){
 				$context.= " : ";
 				$othercontext = $_POST['autrec3'];
 				$context.= $othercontext;
-				$requete = 'INSERT INTO  possiblecontext (context_name, user_id , title) VALUES("'.$context.'","' .$userid.'","'.$title_playlist[2].'")';
+				$requete = 'INSERT INTO  '.$dbprefix.'possiblecontext (context_name, user_id , title) VALUES("'.$context.'","' .$userid.'","'.$title_playlist[2].'")';
 				$res = $connexion -> query($requete);
 				$ok3 = true;
 			}
 		}else{
-			$requete = 'INSERT INTO  possiblecontext (context_name, user_id , title) VALUES("'.$context.'","' .$userid.'","'.$title_playlist[2].'")';
+			$requete = 'INSERT INTO  '.$dbprefix.'possiblecontext (context_name, user_id , title) VALUES("'.$context.'","' .$userid.'","'.$title_playlist[2].'")';
 			$res = $connexion -> query($requete);
 			$ok3 = true;
 		}
@@ -116,12 +126,12 @@ if(!empty($_POST['cptitre4'])){
 				$context.= " : ";
 				$othercontext = $_POST['autrec4'];
 				$context.= $othercontext;
-				$requete = 'INSERT INTO  possiblecontext (context_name, user_id , title) VALUES("'.$context.'","' .$userid.'","'.$title_playlist[3].'")';
+				$requete = 'INSERT INTO  '.$dbprefix.'possiblecontext (context_name, user_id , title) VALUES("'.$context.'","' .$userid.'","'.$title_playlist[3].'")';
 				$res = $connexion -> query($requete);
 				$ok4 = true;
 			}
 		}else{
-			$requete = 'INSERT INTO  possiblecontext (context_name, user_id , title) VALUES("'.$context.'","' .$userid.'","'.$title_playlist[3].'")';
+			$requete = 'INSERT INTO  '.$dbprefix.'possiblecontext (context_name, user_id , title) VALUES("'.$context.'","' .$userid.'","'.$title_playlist[3].'")';
 			$res = $connexion -> query($requete);
 			$ok4 = true;
 		}
@@ -144,12 +154,12 @@ if(!empty($_POST['cptitre5'])){
 				$context.= " : ";
 				$othercontext = $_POST['autrec5'];
 				$context.= $othercontext;
-				$requete = 'INSERT INTO  possiblecontext (context_name, user_id , title) VALUES("'.$context.'","' .$userid.'","'.$title_playlist[4].'")';
+				$requete = 'INSERT INTO  '.$dbprefix.'possiblecontext (context_name, user_id , title) VALUES("'.$context.'","' .$userid.'","'.$title_playlist[4].'")';
 				$res = $connexion -> query($requete);
 				$ok5 = true;
 			}
 		}else{
-			$requete = 'INSERT INTO  possiblecontext (context_name, user_id , title) VALUES("'.$context.'","' .$userid.'","'.$title_playlist[4].'")';
+			$requete = 'INSERT INTO  '.$dbprefix.'possiblecontext (context_name, user_id , title) VALUES("'.$context.'","' .$userid.'","'.$title_playlist[4].'")';
 			$res = $connexion -> query($requete);
 			$ok5 = true;
 		}
@@ -171,12 +181,12 @@ if(!empty($_POST['cptitre6'])){
 				$context.= " : ";
 				$othercontext = $_POST['autrec6'];
 				$context.= $othercontext;
-				$requete = 'INSERT INTO  possiblecontext (context_name, user_id , title) VALUES("'.$context.'","' .$userid.'","'.$title_playlist[5].'")';
+				$requete = 'INSERT INTO  '.$dbprefix.'possiblecontext (context_name, user_id , title) VALUES("'.$context.'","' .$userid.'","'.$title_playlist[5].'")';
 				$res = $connexion -> query($requete);
 				$ok6 = true;
 			}
 		}else{
-			$requete = 'INSERT INTO  possiblecontext (context_name, user_id , title) VALUES("'.$context.'","' .$userid.'","'.$title_playlist[5].'")';
+			$requete = 'INSERT INTO  '.$dbprefix.'possiblecontext (context_name, user_id , title) VALUES("'.$context.'","' .$userid.'","'.$title_playlist[5].'")';
 			$res = $connexion -> query($requete);
 			$ok6 = true;
 		}

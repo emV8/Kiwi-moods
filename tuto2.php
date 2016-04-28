@@ -23,8 +23,16 @@
 
 	<div id = "player">
       <?php
-      $connexion = mysqli_connect("localhost", "root", "", "kiwimoods");
-        $connexion -> query("SET NAMES 'utf8'");
+     include_once('../../config-tut8.php');
+    $connexion = mysqli_connect($databaselocation, $databaseuser, $databasepass, $databasename);
+    if (!$connexion) {
+       die('Could not connect: ' . mysqli_error());
+    }
+    $bdd = mysqli_select_db($connexion, $databasename);
+    if (!$bdd) {
+       die ('Impossible de sélectionner la base de données : ' . mysqli_error());
+    }
+    $connexion -> query("SET NAMES 'utf8'");
         include 'player.php';
         genplaylist($connexion);
       ?>

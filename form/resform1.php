@@ -1,10 +1,4 @@
 <?php
-/*
-$connexion = mysqli_connect("localhost", "root", "", "kiwimoods");
-$connexion -> query("SET NAMES 'utf8'");
-session_start();
-$userid = $_SESSION['userid'];
-*/
 
 include_once('../../config-tut8.php');
 	$connexion = mysql_connect($databaselocation, $databaseuser, $databasepass);
@@ -23,7 +17,7 @@ $ok4 = false;
 $ok5 = false;
 $ok6 = false;
 
-$requete = "SELECT titre, artiste FROM ".$dbprefix." music WHERE playlist_id = '".$_SESSION ['playlist_id']."'";
+$requete = "SELECT titre, artiste FROM ".$dbprefix."music WHERE playlist_id = '".$_SESSION ['playlist_id']."'";
 $res = $connexion -> query($requete);	
 
 while($row = mysqli_fetch_array($res)){
@@ -48,12 +42,12 @@ if(!empty($_POST['etitre1'])){
 				$context.= " : ";
 				$othercontext = $_POST['autre1'];
 				$context.= $othercontext;
-				$requete = 'INSERT INTO '.$dbprefix.'  emotion (emotion_name, user_id, title) VALUES("'.$context.'","' .$userid.'","'.$title_playlist[0].'")';
+				$requete = 'INSERT INTO '.$dbprefix.'emotion (emotion_name, user_id, title) VALUES("'.$context.'","' .$userid.'","'.$title_playlist[0].'")';
 				$res = $connexion -> query($requete);
 				$ok1 = true;
 			}
 		}else{
-			$requete = 'INSERT INTO '.$dbprefix.'  emotion (emotion_name, user_id, title) VALUES("'.$context.'","' .$userid.'","'.$title_playlist[0].'")';
+			$requete = 'INSERT INTO '.$dbprefix.'emotion (emotion_name, user_id, title) VALUES("'.$context.'","' .$userid.'","'.$title_playlist[0].'")';
 			$res = $connexion -> query($requete);
 			$ok1 = true;
 		}
@@ -75,12 +69,12 @@ if(!empty($_POST['etitre2'])){
 				$context.= " : ";
 				$othercontext = $_POST['autre2'];
 				$context.= $othercontext;
-				$requete = 'INSERT INTO '.$dbprefix.'  emotion (emotion_name, user_id, title) VALUES("'.$context.'","' .$userid.'", "'.$title_playlist[1].'")';
+				$requete = 'INSERT INTO '.$dbprefix.'emotion (emotion_name, user_id, title) VALUES("'.$context.'","' .$userid.'", "'.$title_playlist[1].'")';
 				$res = $connexion -> query($requete);
 				$ok2 = true;
 			}
 		}else{
-			$requete = 'INSERT INTO '.$dbprefix.'  emotion (emotion_name, user_id, title) VALUES("'.$context.'","' .$userid.'", "'.$title_playlist[1].'")';
+			$requete = 'INSERT INTO '.$dbprefix.'emotion (emotion_name, user_id, title) VALUES("'.$context.'","' .$userid.'", "'.$title_playlist[1].'")';
 			$res = $connexion -> query($requete);
 			$ok2 = true;
 		}
@@ -102,12 +96,12 @@ if(!empty($_POST['etitre3'])){
 				$context.= " : ";
 				$othercontext = $_POST['autre3'];
 				$context.= $othercontext;
-				$requete = 'INSERT INTO '.$dbprefix.'  emotion (emotion_name, user_id, title) VALUES("'.$context.'","' .$userid.'", "'.$title_playlist[2].'")';
+				$requete = 'INSERT INTO '.$dbprefix.'emotion (emotion_name, user_id, title) VALUES("'.$context.'","' .$userid.'", "'.$title_playlist[2].'")';
 				$res = $connexion -> query($requete);
 				$ok3 = true;
 			}
 		}else{
-			$requete = 'INSERT INTO '.$dbprefix.'  emotion (emotion_name, user_id, title) VALUES("'.$context.'","' .$userid.'", "'.$title_playlist[2].'")';
+			$requete = 'INSERT INTO '.$dbprefix.'emotion (emotion_name, user_id, title) VALUES("'.$context.'","' .$userid.'", "'.$title_playlist[2].'")';
 			$res = $connexion -> query($requete);
 			$ok3 = true;
 		}
@@ -129,12 +123,12 @@ if(!empty($_POST['etitre4'])){
 				$context.= " : ";
 				$othercontext = $_POST['autre4'];
 				$context.= $othercontext;
-				$requete = 'INSERT INTO '.$dbprefix.'  emotion (emotion_name, user_id, title) VALUES("'.$context.'","' .$userid.'", "'.$title_playlist[3].'")';
+				$requete = 'INSERT INTO '.$dbprefix.'emotion (emotion_name, user_id, title) VALUES("'.$context.'","' .$userid.'", "'.$title_playlist[3].'")';
 				$res = $connexion -> query($requete);
 				$ok4 = true;
 			}
 		}else{
-			$requete = 'INSERT INTO '.$dbprefix.'  emotion (emotion_name, user_id, title) VALUES("'.$context.'","' .$userid.'", "'.$title_playlist[3].'")';
+			$requete = 'INSERT INTO '.$dbprefix.'emotion (emotion_name, user_id, title) VALUES("'.$context.'","' .$userid.'", "'.$title_playlist[3].'")';
 			$res = $connexion -> query($requete);
 			$ok4 = true;
 		}
@@ -157,12 +151,12 @@ if(!empty($_POST['etitre5'])){
 				$context.= " : ";
 				$othercontext = $_POST['autre5'];
 				$context.= $othercontext;
-				$requete = 'INSERT INTO '.$dbprefix.'  emotion (emotion_name, user_id, title) VALUES("'.$context.'","' .$userid.'", "'.$title_playlist[4].'")';
+				$requete = 'INSERT INTO '.$dbprefix.'emotion (emotion_name, user_id, title) VALUES("'.$context.'","' .$userid.'", "'.$title_playlist[4].'")';
 				$res = $connexion -> query($requete);
 				$ok5 = true;
 			}
 		}else{
-			$requete = 'INSERT INTO '.$dbprefix.'  emotion (emotion_name, user_id, title) VALUES("'.$context.'","' .$userid.'", "'.$title_playlist[4].'")';
+			$requete = 'INSERT INTO '.$dbprefix.'emotion (emotion_name, user_id, title) VALUES("'.$context.'","' .$userid.'", "'.$title_playlist[4].'")';
 			$res = $connexion -> query($requete);
 			$ok5 = true;
 		}
@@ -184,12 +178,12 @@ if(!empty($_POST['etitre6'])){
 				$context.= " : ";
 				$othercontext = $_POST['autre6'];
 				$context.= $othercontext;
-				$requete = 'INSERT INTO '.$dbprefix.'  emotion (emotion_name, user_id, title) VALUES("'.$context.'","' .$userid.'", "'.$title_playlist[5].'")';
+				$requete = 'INSERT INTO '.$dbprefix.'emotion (emotion_name, user_id, title) VALUES("'.$context.'","' .$userid.'", "'.$title_playlist[5].'")';
 				$res = $connexion -> query($requete);
 				$ok6 = true;
 			}
 		}else{
-			$requete = 'INSERT INTO '.$dbprefix.'  emotion (emotion_name, user_id, title) VALUES("'.$context.'","' .$userid.'", "'.$title_playlist[5].'")';
+			$requete = 'INSERT INTO '.$dbprefix.'emotion (emotion_name, user_id, title) VALUES("'.$context.'","' .$userid.'", "'.$title_playlist[5].'")';
 			$res = $connexion -> query($requete);
 			$ok6 = true;
 		}
