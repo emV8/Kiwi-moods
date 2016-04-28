@@ -28,7 +28,9 @@ if(!empty($_POST['cptitre1'])){
 		$context = $selected;
 		if ($selected=="autrec"){
 			if (empty($_POST['autrec1']) && $_POST['autrec1']==""){
+				$ok1=false;
 				echo false;
+				break;
 			}else{
 				$context.= " : ";
 				$othercontext = $_POST['autrec1'];
@@ -53,7 +55,9 @@ if(!empty($_POST['cptitre2'])){
 		$context = $selected;
 		if ($selected=="autrec"){
 			if (empty($_POST['autrec1']) && $_POST['autrec2']==""){
+				$ok2=false;
 				echo false;
+				break;
 			}else{
 				$context.= " : ";
 				$othercontext = $_POST['autrec2'];
@@ -78,8 +82,9 @@ if(!empty($_POST['cptitre3'])){
 		$context = $selected;
 		if ($selected=="autrec"){
 			if (empty($_POST['autrec3']) && $_POST['autrec3']==""){
-				echo "<script> alert('Merci de remplir le champ \'Autre\'') </script>";
-				echo "<script> location.href = history.back(-1) </script>";
+				$ok3=false;
+				echo false;
+				break;
 			}else{
 				$context.= " : ";
 				$othercontext = $_POST['autrec3'];
@@ -104,8 +109,9 @@ if(!empty($_POST['cptitre4'])){
 		$context = $selected;
 		if ($selected=="autrec"){
 			if (empty($_POST['autrec4']) && $_POST['autrec4']==""){
-				echo "<script> alert('Merci de remplir le champ \'Autre\'') </script>";
-				echo "<script> location.href = history.back(-1) </script>";
+				$ok4=false;
+				echo false;
+				break;
 			}else{
 				$context.= " : ";
 				$othercontext = $_POST['autrec4'];
@@ -131,8 +137,9 @@ if(!empty($_POST['cptitre5'])){
 		$context = $selected;
 		if ($selected=="autrec"){
 			if (empty($_POST['autrec5']) && $_POST['autrec5']==""){
-				echo "<script> alert('Merci de remplir le champ \'Autre\'') </script>";
-				echo "<script> location.href = history.back(-1) </script>";
+				$ok5=false;
+				echo false;
+				break;
 			}else{
 				$context.= " : ";
 				$othercontext = $_POST['autrec5'];
@@ -157,8 +164,9 @@ if(!empty($_POST['cptitre6'])){
 		$context = $selected;
 		if ($selected=="autrec"){
 			if (empty($_POST['autrec6']) && $_POST['autrec6']==""){
-				echo "<script> alert('Merci de remplir le champ \'Autre\'') </script>";
-				echo "<script> location.href = history.back(-1) </script>";
+				$ok6=false;
+				echo false;
+				break;
 			}else{
 				$context.= " : ";
 				$othercontext = $_POST['autrec6'];

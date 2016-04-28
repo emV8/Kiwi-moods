@@ -52,14 +52,24 @@ include 'Htm5Playlist/PlayList.php';
                 $link[] = $row['lien'];
 
             }
+
+            $title_list = array(
+                0 => array('url' => $link[0], 'title' => $title[0], 'artist' => $artist[0]),
+                1 => array('url' => $link[1], 'title' => $title[1], 'artist' => $artist[1]),
+                2 => array('url' => $link[2], 'title' => $title[2], 'artist' => $artist[2]),
+                3 => array('url' => $link[3], 'title' => $title[3], 'artist' => $artist[3]),
+                4 => array('url' => $link[4], 'title' => $title[4], 'artist' => $artist[4]),
+                5 => array('url' => $link[5], 'title' => $title[5], 'artist' => $artist[5]),
+            );
+            shuffle($title_list);
             //*******************************
             // version 2: par des Array!
             //*******************************
             //on renseigne deux Arrays, un pour les chemins vers les musiques à lire, 
             //un deuxième pour les titres.
 
-
-            $chemin[0] = $link[0];
+/*
+            $chemin[0] = $link[0];/*
             $titre[0] = $title[0]." - ".$artist[0];
 
             $chemin[1] = $link[1];
@@ -76,6 +86,28 @@ include 'Htm5Playlist/PlayList.php';
 
             $chemin[5] = $link[5];
             $titre[5] = $title[5]." - ".$artist[5];
+            */
+
+            $chemin[0] = $title_list[0]['url'];
+            $titre[0] = $title_list[0]['artist']." - ".$title_list[0]['title'];
+
+            $chemin[1] = $title_list[1]['url'];
+            $titre[1] = $title_list[1]['artist']." - ".$title_list[1]['title'];
+
+            $chemin[2] = $title_list[2]['url'];
+            $titre[2] = $title_list[2]['artist']." - ".$title_list[2]['title'];
+
+            $chemin[3] = $title_list[3]['url'];
+            $titre[3] = $title_list[3]['artist']." - ".$title_list[3]['title'];
+
+            $chemin[4] = $title_list[4]['url'];
+            $titre[4] = $title_list[4]['artist']." - ".$title_list[4]['title'];
+
+            $chemin[5] = $title_list[5]['url'];
+            $titre[5] = $title_list[5]['artist']." - ".$title_list[5]['title'];
+
+            $_SESSION['title_list'] = $title_list;
+
 
             //on place simplement la playliste généré par les Arrays grâce à 
             //la fonction getArray($id, $chemin, $titre).

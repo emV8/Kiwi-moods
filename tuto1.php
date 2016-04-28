@@ -30,7 +30,7 @@
 		Bonne écoute !
 		<br/>
 		<br/>
-		<span> <input type = "button" class="suivant" value = "Passer à l'écoute >" onclick = "self.location.href = 'tuto2.php'"/> </span>
+		<span> <input type = "button" class="suivant" value = "Passer à l'écoute >" style = "width:15%;" onclick = "self.location.href = 'tuto2.php'"/> </span>
 	</div>
 	
 

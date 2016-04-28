@@ -30,7 +30,9 @@ if(!empty($_POST['etitre1'])){
 		$context = $selected;
 		if ($selected=="autre"){
 			if (empty($_POST['autre1']) || $_POST['autre1']==""){
+				$ok1=false;
 				echo false;
+				break;
 			}else{
 				$context.= " : ";
 				$othercontext = $_POST['autre1'];
@@ -55,7 +57,9 @@ if(!empty($_POST['etitre2'])){
 		$context = $selected;
 		if ($selected=="autre"){
 			if (empty($_POST['autre1']) || $_POST['autre2']==""){
+				$ok2=false;
 				echo false;
+				break;
 			}else{
 				$context.= " : ";
 				$othercontext = $_POST['autre2'];
@@ -80,7 +84,9 @@ if(!empty($_POST['etitre3'])){
 		$context = $selected;
 		if ($selected=="autre"){
 			if (empty($_POST['autre3']) || $_POST['autre3']==""){
+				$ok3=false;
 				echo false;
+				break;
 			}else{
 				$context.= " : ";
 				$othercontext = $_POST['autre3'];
@@ -105,7 +111,9 @@ if(!empty($_POST['etitre4'])){
 		$context = $selected;
 		if ($selected=="autre"){
 			if (empty($_POST['autre4']) || $_POST['autre4']==""){
+				$ok4=false;
 				echo false;
+				break;
 			}else{
 				$context.= " : ";
 				$othercontext = $_POST['autre4'];
@@ -131,7 +139,9 @@ if(!empty($_POST['etitre5'])){
 		$context = $selected;
 		if ($selected=="autre"){
 			if (empty($_POST['autre5']) || $_POST['autre5']==""){
+				$ok5=false;
 				echo false;
+				break;
 			}else{
 				$context.= " : ";
 				$othercontext = $_POST['autre5'];
@@ -156,7 +166,9 @@ if(!empty($_POST['etitre6'])){
 		$context = $selected;
 		if ($selected=="autre"){
 			if (empty($_POST['autre6']) || $_POST['autre6']==""){
+				$ok6=false;
 				echo false;
+				break;
 			}else{
 				$context.= " : ";
 				$othercontext = $_POST['autre6'];

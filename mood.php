@@ -37,7 +37,7 @@
 						Affolé - Alarmé - Angoissé - Anxieux ... <br />
 						Dégoûté - Écœuré - Rébuté - Révulsé ... <br />
 						Amusé - Comblé - Content - Égayé ... <br />
-						... </br>
+						... 
 						</p>
 						</div>
 						<b class="bottom"><b class="b4b"></b><b class="b3b"></b><b class="b2b"></b><b class="b1b"></b></b>
@@ -50,7 +50,7 @@
 		<div id="excitation"> <img src="img/music/orange.png" width="25%" alt="excitation"> <br/> Excitation <br/> <span class ="radiomood"> <input type='radio' name="mood" value='excitation' /> </span> </div>
 		<div id="angry"> <img src="img/music/rouge.png" width="25%" alt="colère"> <br/> Colère <br/> <span class ="radiomood"> <input type='radio' name="mood" value='colère' /> </span> </div>
 		<div id="happiness"> <img src="img/music/jaune.png" width="25%" alt="joie"> <br/> Joie <br/> <span class ="radiomood"> <input type='radio' name="mood" value='joie' /> </span> </div>
-		<div id="other"> <img src="img/music/blanc.png" width="25%" alt="autre"> <br/> Autre <br/> <span class ="radiomood"> <input id ="othermood" type='radio' name="mood" value='autre' /> </span> <br/> <input type="text" name="otherMood" id = "otherMood" placeholder="Si autre, écrire une/des émotion(s)..." onfocus="document.getElementById('othermood').checked=true;"/> </div>
+		<div id="other"> <img src="img/music/blanc.png" width="25%" alt="autre"> <br/> Autre <br/> <span class ="radiomood"> <input  id ="othermood" type='radio' name="mood" value='autre' /> </span> <input type="text" name="otherMood" id = "otherMood" placeholder="Si autre, écrire une/des émotion(s)..." onfocus="document.getElementById('othermood').checked=true; " style="width:120%;"/> </div>
 		<div id="calm"> <img src="img/music/vert.png" width="25%" alt="calme"> <br/> Calme/relaxation <br/> <span class ="radiomood"> <input type='radio' name="mood" value='calme' /> </span> </div>
 		<div id="sadness"> <img src="img/music/noir.png" width="25%" alt="tristesse"> <br/> Tristesse <br/> <span class ="radiomood"> <input type='radio' name="mood" value='tristesse' /> </span> </div>
 		<div id="tired"> <img src="img/music/violet.png" width="25%" alt="fatigue"> <br/> Fatigue <br/> <span class ="radiomood"> <input type='radio' name="mood" value='fatigue' /> </span> </div>

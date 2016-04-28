@@ -52,7 +52,7 @@ function loadFormLast(elem) {
                 {
                    alert("Veuillez remplir tous les champs du questionnaire");
                }else{
-                window.location.href = "tmp.php";
+                    window.location.href = "tmp.php";
                }
                
             }

@@ -8,17 +8,13 @@
 		session_start();
 	}
 
-  $title = array();
-            $artist = array();
-            $link = array();
-            $requete = "SELECT titre, artiste, lien FROM music WHERE playlist_id = '".$_SESSION['playlist_id']."'";
-            $res = mysql_query($requete);   
-            while($row = mysql_fetch_array($res)){
-                $title[] = $row['titre'];
-                $artist[] = $row['artiste'];
-                $link[] = $row['lien'];
-
-            }
+	$title = array();
+	$artist = array();
+	$title_list = $_SESSION['title_list'];
+	for ($i=0; $i<6; $i++){
+		$title[$i] = $title_list[$i]['title'];
+		$artist[$i]= $title_list[$i]['artist'];
+	}
 ?>
 			<form id = "premier" action="form/resform1.php" method="post" onsubmit="return false">
 			<b> 1. Pour chacun des titres écoutés, quelle(s) émotion(s)

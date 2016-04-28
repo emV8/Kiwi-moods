@@ -38,7 +38,7 @@
             Ce dernier est composé de 11 questions et chacune est obligatoire. <br/>
             N'hésitez pas à remplir le champ <i> "autre" </i> si aucune des formulations ne vous convient. <br/>
             Merci de répondre le plus honnêtement possible à ces questions et de ne pas interrompre le questionnaire. <br/>
-            Pour une bonne navigation dans le questionnaire, merci de ne pas utiliser le bouton précédent. <br/> <br/>
+            Pour une bonne navigation dans le questionnaire, merci de ne pas utiliser les boutons précédent et suivant. <br/> <br/>
             Merci !
             <br/>
             <br/>

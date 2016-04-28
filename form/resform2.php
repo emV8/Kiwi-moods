@@ -27,8 +27,10 @@ if(!empty($_POST['ctitre1'])){
 	foreach($_POST['ctitre1'] as $selected){
 		$context = $selected;
 		if ($selected=="autre"){
-			if (empty($_POST['autre1']) && $_POST['autre1']==""){
+			if (empty($_POST['autre1']) || $_POST['autre1']==""){
+				$ok1=false;
 				echo false;
+				break;
 			}else{
 				$context.= " : ";
 				$othercontext = $_POST['autre1'];
@@ -52,8 +54,10 @@ if(!empty($_POST['ctitre2'])){
 	foreach($_POST['ctitre2'] as $selected){
 		$context = $selected;
 		if ($selected=="autre"){
-			if (empty($_POST['autre1']) && $_POST['autre2']==""){
+			if (empty($_POST['autre1']) || $_POST['autre2']==""){
+				$ok2=false;
 				echo false;
+				break;
 			}else{
 				$context.= " : ";
 				$othercontext = $_POST['autre2'];
@@ -77,8 +81,10 @@ if(!empty($_POST['ctitre3'])){
 	foreach($_POST['ctitre3'] as $selected){
 		$context = $selected;
 		if ($selected=="autre"){
-			if (empty($_POST['autre3']) && $_POST['autre3']==""){
+			if (empty($_POST['autre3']) || $_POST['autre3']==""){
+				$ok3=false;
 				echo false;
+				break;
 			}else{
 				$context.= " : ";
 				$othercontext = $_POST['autre3'];
@@ -102,8 +108,10 @@ if(!empty($_POST['ctitre4'])){
 	foreach($_POST['ctitre4'] as $selected){
 		$context = $selected;
 		if ($selected=="autre"){
-			if (empty($_POST['autre4']) && $_POST['autre4']==""){
+			if (empty($_POST['autre4']) || $_POST['autre4']==""){
+				$ok4=false;
 				echo false;
+				break;
 			}else{
 				$context.= " : ";
 				$othercontext = $_POST['autre4'];
@@ -128,8 +136,10 @@ if(!empty($_POST['ctitre5'])){
 	foreach($_POST['ctitre5'] as $selected){
 		$context = $selected;
 		if ($selected=="autre"){
-			if (empty($_POST['autre5']) && $_POST['autre5']==""){
+			if (empty($_POST['autre5']) || $_POST['autre5']==""){
+				$ok5=false;
 				echo false;
+				break;
 			}else{
 				$context.= " : ";
 				$othercontext = $_POST['autre5'];
@@ -153,8 +163,10 @@ if(!empty($_POST['ctitre6'])){
 	foreach($_POST['ctitre6'] as $selected){
 		$context = $selected;
 		if ($selected=="autre"){
-			if (empty($_POST['autre6']) && $_POST['autre6']==""){
+			if (empty($_POST['autre6']) || $_POST['autre6']==""){
+				$ok6=false;
 				echo false;
+				break;
 			}else{
 				$context.= " : ";
 				$othercontext = $_POST['autre6'];
