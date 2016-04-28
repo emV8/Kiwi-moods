@@ -40,7 +40,20 @@ include 'Htm5Playlist/PlayList.php';
         {
             $playList = new PlayList("Htm5Playlist/");
 
+            if (session_status() == PHP_SESSION_NONE || session_id()== ""){
+        session_start();
+    }
 
+    $title = array();
+    $artist = array();
+    $title_list = $_SESSION['title_list'];
+    /*
+    for ($i=0; $i<6; $i++){
+        $title[$i] = $title_list[$i]['title'];
+        $artist[$i]= $title_list[$i]['artist'];
+    }*/
+
+/*
             $title = array();
             $artist = array();
             $link = array();
@@ -62,6 +75,9 @@ include 'Htm5Playlist/PlayList.php';
                 5 => array('url' => $link[5], 'title' => $title[5], 'artist' => $artist[5]),
             );
             shuffle($title_list);
+             $_SESSION['title_list'] = $title_list;*/
+
+
             //*******************************
             // version 2: par des Array!
             //*******************************
@@ -106,7 +122,7 @@ include 'Htm5Playlist/PlayList.php';
             $chemin[5] = $title_list[5]['url'];
             $titre[5] = $title_list[5]['artist']." - ".$title_list[5]['title'];
 
-            $_SESSION['title_list'] = $title_list;
+           
 
 
             //on place simplement la playliste généré par les Arrays grâce à 

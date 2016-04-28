@@ -52,6 +52,28 @@ if(!empty($_POST['mood'])){
 						break;
 					}
 				}
+				 $title = array();
+            $artist = array();
+            $link = array();
+            $requete = "SELECT titre, artiste, lien FROM music WHERE playlist_id = '".$_SESSION['playlist_id']."'";
+            $res = $connexion -> query($requete);   
+            while($row = mysqli_fetch_array($res)){
+                $title[] = $row['titre'];
+                $artist[] = $row['artiste'];
+                $link[] = $row['lien'];
+
+            }
+
+            $title_list = array(
+                0 => array('url' => $link[0], 'title' => $title[0], 'artist' => $artist[0]),
+                1 => array('url' => $link[1], 'title' => $title[1], 'artist' => $artist[1]),
+                2 => array('url' => $link[2], 'title' => $title[2], 'artist' => $artist[2]),
+                3 => array('url' => $link[3], 'title' => $title[3], 'artist' => $artist[3]),
+                4 => array('url' => $link[4], 'title' => $title[4], 'artist' => $artist[4]),
+                5 => array('url' => $link[5], 'title' => $title[5], 'artist' => $artist[5]),
+            );
+            shuffle($title_list);
+             $_SESSION['title_list'] = $title_list;
 			}else{
 				header("Location:end.php");
 				exit;
@@ -85,6 +107,28 @@ if(!empty($_POST['mood'])){
 						break;
 					}
 				}
+				 $title = array();
+            $artist = array();
+            $link = array();
+            $requete = "SELECT titre, artiste, lien FROM music WHERE playlist_id = '".$_SESSION['playlist_id']."'";
+            $res = $connexion -> query($requete);   
+            while($row = mysqli_fetch_array($res)){
+                $title[] = $row['titre'];
+                $artist[] = $row['artiste'];
+                $link[] = $row['lien'];
+
+            }
+
+            $title_list = array(
+                0 => array('url' => $link[0], 'title' => $title[0], 'artist' => $artist[0]),
+                1 => array('url' => $link[1], 'title' => $title[1], 'artist' => $artist[1]),
+                2 => array('url' => $link[2], 'title' => $title[2], 'artist' => $artist[2]),
+                3 => array('url' => $link[3], 'title' => $title[3], 'artist' => $artist[3]),
+                4 => array('url' => $link[4], 'title' => $title[4], 'artist' => $artist[4]),
+                5 => array('url' => $link[5], 'title' => $title[5], 'artist' => $artist[5]),
+            );
+            shuffle($title_list);
+             $_SESSION['title_list'] = $title_list;
 			}else{
 				header("Location:end.php");
 				exit;
