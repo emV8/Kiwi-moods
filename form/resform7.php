@@ -3,7 +3,7 @@ $connexion = mysqli_connect("localhost", "root", "", "kiwimoods");
 $connexion -> query("SET NAMES 'utf8'");
 session_start();
 $userid = $_SESSION['userid'];
-$ok1 = false;
+$ok1 = true;
 
 if (!$connexion) {
 	die('Could not connect: ' . mysqli_error());
