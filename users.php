@@ -27,13 +27,13 @@
 		$identifiant = $_POST['loginConn'];
 		$mdp = $_POST['passwordConn'];
 		$mdpcode = md5($mdp);
-		$requete = "SELECT * FROM  user WHERE login = '".$identifiant."' AND mdp = '".$mdpcode."'";
+		$requete = "SELECT * FROM ".$dbprefix."  user WHERE login = '".$identifiant."' AND mdp = '".$mdpcode."'";
 		$res = $connexion -> query($requete);
 		
 		$row = mysqli_fetch_row($res);
 		if ($row[0]){
 			echo "Vous êtes connecté, '".$identifiant."'";
-			$requete3 = "SELECT user_id FROM  user WHERE login = '".$identifiant."'";
+			$requete3 = "SELECT user_id FROM ".$dbprefix."  user WHERE login = '".$identifiant."'";
 			$res = $connexion -> query($requete3);
 			$userid = mysqli_fetch_row($res)[0];
 			session_start();
@@ -58,15 +58,15 @@
 		}else{
 			$mail = "";
 		}
-		$requete = "SELECT * FROM  user WHERE login = '".$identifiant."'";
+		$requete = "SELECT * FROM ".$dbprefix."  user WHERE login = '".$identifiant."'";
 		$res = $connexion->query($requete);
 		$row = mysqli_fetch_row($res);
 		if (!$row[0]){
 			$mdpcode = md5($mdp);
-			$requete2 = "INSERT INTO  user (login, mdp, mail) VALUES('".$identifiant."','" .$mdpcode."', '" .$mail."')";
+			$requete2 = "INSERT INTO '.$dbprefix.'  user (login, mdp, mail) VALUES('".$identifiant."','" .$mdpcode."', '" .$mail."')";
 			$res2 = $connexion -> query($requete2);
 			if ($res2){
-				$requete3 = "SELECT user_id FROM  user WHERE login = '".$identifiant."'";
+				$requete3 = "SELECT user_id FROM ".$dbprefix."  user WHERE login = '".$identifiant."'";
 				$res = $connexion -> query($requete3);
 				$tmp = mysqli_fetch_row($res);
 			    $userid = $tmp[0];
