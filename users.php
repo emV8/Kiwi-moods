@@ -1,6 +1,6 @@
 <?php
 
-/*
+
 	include_once('../../config-tut8.php');
 	$connexion = mysqli_connect($databaselocation, $databaseuser, $databasepass);
 	if (!$connexion) {
@@ -11,9 +11,9 @@
        die ('Impossible de sélectionner la base de données : ' . mysqli_error());
     }
 	$connexion -> query("SET NAMES 'utf8'");
-	*/
+	/*
 	$connexion=mysqli_connect("localhost", "root", '', "kiwimoods") or die("Erreur de connexion à la bdd");
-	$connexion -> query("SET NAMES 'utf8'");
+	$connexion -> query("SET NAMES 'utf8'");*/
 
 
 	if (!empty($_POST['loginConn']) and !empty($_POST['passwordConn'])){

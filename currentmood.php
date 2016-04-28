@@ -1,6 +1,6 @@
 <?php
 
-/*
+
 include_once('../../config-tut8.php');
 $connexion = mysqli_connect($databaselocation, $databaseuser, $databasepass);
 if (!$connexion) {
@@ -11,9 +11,10 @@ if (!$bdd) {
 	die ('Impossible de sélectionner la base de données : ' . mysqli_error());
 }
 $connexion -> query($requete)("SET NAMES 'utf8'");
-*/
+
+/*
 $connexion = mysqli_connect("localhost", "root", "", "kiwimoods");
-$connexion -> query("SET NAMES 'utf8'");
+$connexion -> query("SET NAMES 'utf8'");*/
 
 session_start();
 $userid = $_SESSION['userid'];
