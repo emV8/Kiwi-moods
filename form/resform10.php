@@ -8,6 +8,7 @@ if (!$connexion) {
 }
 
 $ok1 = true;
+$playlist_id = $_SESSION['playlist_id'];
 
 
 
